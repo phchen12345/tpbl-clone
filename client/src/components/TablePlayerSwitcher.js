@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TableScore from "../constants/TableScore";
+import noise from "../assets/noise.webp";
 
 const TablePlayerSwitcher = () => {
   const [activeTab, setActiveTab] = useState("Score");
@@ -11,7 +12,10 @@ const TablePlayerSwitcher = () => {
     <div>
       <div className="bg-linear w-full h-[56px] relative ">
         <div className="triangle2 absolute right-0"></div>
-        <div className="table-bg  h-[56px] mt-[1rem] flex justify-center items-center">
+        <div
+          style={{ backgroundImage: `url(${noise})` }}
+          className="table-bg  h-[56px] mt-[1rem] flex justify-center items-center"
+        >
           <div className="flex relative flex-1 justify-center items-center">
             <span
               className="text-cn-paragraph-xl font-bold cursor-pointer"

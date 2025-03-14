@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getTeams } from "../services/team.service"; // 從後端獲取數據
-
+import noise from "../assets/noise.webp";
 import TableStandings from "../constants/TableStandings"; // 戰績表格
 import TableMatchups from "../constants/TableMatchups";
 
@@ -28,7 +28,10 @@ const TableSwitcher = () => {
   return (
     <div className="bg-linear w-full   relative  ">
       {/* 標題切換 */}
-      <div className="table-bg w-full h-[56px] flex  font-bold ">
+      <div
+        style={{ backgroundImage: `url(${noise})` }}
+        className="table-bg w-full h-[56px] flex  font-bold "
+      >
         <div className="triangle2 absolute right-0"></div>
         <div
           className={`flex flex-1 justify-center items-center text-cn-paragraph-xl relative cursor-pointer`}

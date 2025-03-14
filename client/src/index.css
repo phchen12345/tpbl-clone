@@ -44,7 +44,6 @@ li {
   padding-top: 1;
 }
 #bg1 {
-  background-image: url("file:///C:/Users/user/Downloads/bg.Vm1wR9NE-1.webp");
   background-size: cover;
 }
 .bg2 {
@@ -130,7 +129,7 @@ li {
     border-bottom-width: 1px;
   }
   .table-bg {
-    background-image: url("file:///C:/Users/user/Downloads/noise.BL6fxeZz.webp");
+    /* background-image: url("file:///C:/Users/user/Downloads/noise.BL6fxeZz.webp"); */
     background-size: cover;
   }
   .text-label-sm {
@@ -257,7 +256,7 @@ li {
     background-color: #fff6;
   }
   footer {
-    background-image: url("file:///C:/Users/user/Downloads/footer.DqGuclCA.webp");
+    /* background-image: url("file:///C:/Users/user/Downloads/footer.DqGuclCA.webp"); */
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

@@ -3,6 +3,7 @@ import { getTeams } from "../services/team.service";
 import { getSchedule } from "../services/schedule.service";
 import youtube from "../assets/youtube.svg";
 import sportcast from "../assets/sportcast.svg";
+import noise from "../assets/noise.webp";
 
 const Game = () => {
   const [teams, setTeams] = useState([]);
@@ -91,7 +92,10 @@ const Game = () => {
         </div>
         <div className="bg-linear w-full  relative  ">
           <div className=" triangle2 absolute right-0 "></div>
-          <div className="table-bg  flex items-center   gap-3 overflow-x-scroll overflow-y-hidden pl-20 py-[0.4rem] ">
+          <div
+            style={{ backgroundImage: `url(${noise})` }}
+            className="table-bg  flex items-center   gap-3 overflow-x-scroll overflow-y-hidden pl-20 py-[0.4rem] "
+          >
             {getUniqueDates()
               .slice(0, 7)
               .map((g, index) => (
