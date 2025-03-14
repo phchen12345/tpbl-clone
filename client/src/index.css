@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Chakra Petch, Noto Sans TC, sans-serif;
+  font-optical-sizing: auto;
+  background-color: #f2f2f3;
+}
+
+.triangle {
+  border-color: #19191a transparent transparent;
+  border-style: solid;
+  border-width: 20px 24px 0 0;
+  height: 0;
+  transform: rotate(0);
+  width: 0;
+}
+.triangle2 {
+  border-color: transparent #f2f2f3 transparent transparent;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  height: 0;
+  transform: rotate(0);
+  width: 0;
+}
+
+/* ul {
+  background-color: black;
+}
+li {
+  background-color: black;
+}
+a {
+  background-color: black;
+} */
+
+li {
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 1;
+}
+#bg1 {
+  background-image: url("file:///C:/Users/user/Downloads/bg.Vm1wR9NE-1.webp");
+  background-size: cover;
+}
+.bg2 {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  column-gap: 1.5rem;
+  max-width: 1280px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+@media (width > 1900px) {
+  .bg2 {
+    max-width: 1560px;
+  }
+}
+
+@layer utilities {
+  .text-en-heading-2 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.96px;
+    line-height: 120%;
+  }
+  .text-en-heading-4 {
+    font-size: 32px;
+    font-weight: 350;
+    letter-spacing: -0.64px;
+    line-height: 120%;
+  }
+  .text-cn-heading-4 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .text-en-heading-3 {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    line-height: 120%;
+  }
+  .text-en-heading-4 {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.64px;
+    line-height: 120%;
+  }
+  .text-en-heading-5 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.56px;
+    line-height: 120%;
+  }
+  .text-cn-paragraph-xl {
+    font-size: 18px;
+    line-height: 250%;
+    color: black;
+  }
+  .text-cn-paragraph-sm {
+    font-size: 12px;
+    line-height: 150%;
+  }
+  .border-league-secondary-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(211 211 212 / var(--tw-border-opacity, 1));
+  }
+  .text-league-primary-600 {
+    --tw-text-opacity: 1;
+    color: rgb(27 116 168 / var(--tw-text-opacity, 1));
+  }
+  .border-league-secondary-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(190 190 190 / var(--tw-border-opacity, 1));
+  }
+  .border-league-secondary-100 {
+    --tw-border-opacity: 1;
+    border-color: rgb(211 211 212 / var(--tw-border-opacity, 1));
+  }
+  .text-league-secondary-400 {
+    --tw-text-opacity: 1;
+    color: rgb(146 146 147 / var(--tw-text-opacity, 1));
+  }
+  .border-b {
+    border-bottom-width: 1px;
+  }
+  .table-bg {
+    background-image: url("file:///C:/Users/user/Downloads/noise.BL6fxeZz.webp");
+    background-size: cover;
+  }
+  .text-label-sm {
+    font-size: 12px;
+    letter-spacing: -0.2px;
+  }
+  .bg-league-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 60 100);
+  }
+  .text-en-paragraph-xl {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .text-league-secondary-500 {
+    --tw-text-opacity: 1;
+    color: rgb(121 121 121 / var(--tw-text-opacity, 1));
+  }
+  .text-league-secondary {
+    --tw-text-opacity: 1;
+    color: rgb(200 173 135 / var(--tw-text-opacity, 1));
+  }
+
+  .text-league-secondary-300 {
+    --tw-text-opacity: 1;
+    color: rgb(168 168 169 / var(--tw-text-opacity, 1));
+  }
+  .border-b-4 {
+    border-bottom-width: 4px;
+  }
+  .border-league-primary {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 60 100 / var(--tw-border-opacity, 1));
+  }
+
+  .underline-expand-active {
+    transform: scaleX(1); /* 最終狀態：縮放為 1 */
+    opacity: 1; /* 最終透明度為 1 */
+    transition: transform 0.2s ease-out; /* 平滑過渡 */
+  }
+  .underline-collapse-active {
+    transform: scaleX(0); /* 最終狀態：縮放為 0 */
+    opacity: 1; /* 最終透明度為 0 */
+    transition: transform 0.2s ease-in; /* 縮回動畫 */
+  }
+  .menu-text {
+    transform: translateY(-24px);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .bg-linear {
+    background: linear-gradient(92deg, #e0e0e0, #9d9d9d);
+  }
+  .text-league-secondary-900 {
+    --tw-text-opacity: 1;
+    color: rgb(17 19 21 / var(--tw-text-opacity, 1));
+  }
+  .text-cn-heading-6 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .border-t {
+    border-top-width: 1px;
+  }
+  .text-en-paragraph-md {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  .text-en-paragraph-lg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  .text-league-primary-900 {
+    --tw-text-opacity: 1;
+    color: rgb(0 60 100 / var(--tw-text-opacity, 1));
+  }
+  .text-cn-paragraph-md {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .text-en-paragraph-sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  .bg-league-secondary-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242 242 243 / var(--tw-bg-opacity, 1));
+  }
+  .bg3 {
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 1.5rem;
+    max-width: 1280px;
+  }
+
+  .bg4 {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.78) 4.7%,
+      rgba(0, 0, 0, 0.76) 8.9%,
+      rgba(0, 0, 0, 0.74) 12.8%,
+      rgba(0, 0, 0, 0.72) 16.56%,
+      rgba(0, 0, 0, 0.69) 20.37%,
+      rgba(0, 0, 0, 0.66) 24.4%,
+      rgba(0, 0, 0, 0.62) 28.83%,
+      rgba(0, 0, 0, 0.57) 33.84%,
+      rgba(0, 0, 0, 0.52) 39.6%,
+      rgba(0, 0, 0, 0.46) 46.3%,
+      rgba(0, 0, 0, 0.39) 54.1%,
+      rgba(0, 0, 0, 0.31) 63.2%,
+      rgba(0, 0, 0, 0.22) 73.76%,
+      rgba(0, 0, 0, 0.11) 85.97%,
+      transparent
+    );
+  }
+  .bg5 {
+    background-color: #fff6;
+  }
+  footer {
+    background-image: url("file:///C:/Users/user/Downloads/footer.DqGuclCA.webp");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .bg-dark {
+    background-color: #111315;
+  }
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: rgb(54 133 178) !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: black !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination {
+  }
+  .text-en-heading-6 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 120%;
+  }
+  .text-cn-heading-5 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .text-cn-paragraph-md {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .swiper-pagination {
+    display: flex !important;
+    justify-content: end;
+    max-width: 1280px !important;
+    margin: auto;
+
+    padding-bottom: 2.5rem;
+  }
+  .navHover {
+    cursor: pointer;
+    :hover {
+    }
+  }
+  .chevron-right {
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967L15.5303 11.4697C15.8232 11.7626 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.23744 18.8232 8.76256 18.8232 8.46967 18.5303C8.17678 18.2374 8.17678 17.7626 8.46967 17.4697L13.9393 12L8.46967 6.53033C8.17678 6.23744 8.17678 5.76256 8.46967 5.46967Z' fill='black'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .masked-linedin {
+    width: 24px;
+    height: 24px;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    background: currentColor;
+    mask-image: var(--svg);
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='none'%3E%3Cg id='Social/linkedin'%3E %3Cg id='Vector'%3E %3Cpath d='M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z' fill='black'/%3E %3Cpath d='M6 9H2V21H6V9Z' fill='black'/%3E %3Cpath d='M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z' fill='black'/%3E %3C/g%3E %3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .bg-inner-head {
+    background-image: url("https://assets.tpbl.basketball/frontend/_nuxt/bg-inner-head.CcNJRZe0.webp");
+    background-position: 50%;
+    background-size: cover;
+  }
+  .text-en-display-3 {
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -1.28px;
+    line-height: 120%;
+  }
+  .custom-select {
+    appearance: none; /* 移除預設的箭頭 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7 10l5 5 5-5H7z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px; /* 確保右側箭頭有足夠空間 */
+  }
+  .chevron-down {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cg fill='none'%3E%3Cg id='chevron-down'%3E %3Cpath id='Vector (Stroke)' fill-rule='evenodd' clip-rule='evenodd' d='M5.46967 8.46967C5.76256 8.17678 6.23744 8.17678 6.53033 8.46967L12 13.9393L17.4697 8.46967C17.7626 8.17678 18.2374 8.17678 18.5303 8.46967C18.8232 8.76256 18.8232 9.23744 18.5303 9.53033L12.5303 15.5303C12.2374 15.8232 11.7626 15.8232 11.4697 15.5303L5.46967 9.53033C5.17678 9.23744 5.17678 8.76256 5.46967 8.46967Z' fill='black'/%3E %3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .dropdown {
+    background-color: rgb(211 211 212 / var(--tw-bg-opacity, 1));
+  }
+  .broadcate {
+    background: #d3d3d480;
+  }
+}
+
+@media (width > 1900px) {
+  .bg3 {
+    max-width: 1560px;
+  }
+}
