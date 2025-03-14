@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/schedule";
+const API_URL = "https://tpbl-clone.onrender.com/schedule";
 
 export const getSchedule = async () => {
   try {
@@ -13,7 +13,9 @@ export const getSchedule = async () => {
 
 export const getGamesByMonth = async (year, month) => {
   try {
-    const res = await fetch(`http://localhost:8080/schedule/${year}/${month}`);
+    const res = await fetch(
+      `https://tpbl-clone.onrender.com/schedule/${year}/${month}`
+    );
     const gameData = await res.json();
     return gameData;
   } catch (e) {
@@ -33,7 +35,9 @@ export const getGamesByDay = async (year, month, day) => {
 
 export const getUpcomingGame = async () => {
   try {
-    const res = await fetch(`http://localhost:8080/schedule/upcoming`);
+    const res = await fetch(
+      `https://tpbl-clone.onrender.com/schedule/upcoming`
+    );
     const upcomingGamesData = await res.json();
     return upcomingGamesData;
   } catch (e) {

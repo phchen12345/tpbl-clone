@@ -30,7 +30,7 @@ const Schedule = () => {
   };
 
   const fetchGameCounts = async () => {
-    let url = `http://localhost:8080/schedule/`;
+    let url = `https://tpbl-clone.onrender.com/schedule/`;
     if (Month) {
       const [year, month] = Month.split("-");
       url += `${year}/${month}`;
@@ -59,7 +59,7 @@ const Schedule = () => {
   };
 
   const fetchGames = async (year, month) => {
-    let url = `http://localhost:8080/schedule/`;
+    let url = `https://tpbl-clone.onrender.com/schedule/`;
     if (Month) {
       const [year, month] = Month.split("-");
       url += `${year}/${month}`;
