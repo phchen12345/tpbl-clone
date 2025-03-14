@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomeComponent />}></Route>
-          <Route path="/schedule" element={<Schedule />}></Route>
+          <Route path="/Schedule" element={<Schedule />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
