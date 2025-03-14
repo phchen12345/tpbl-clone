@@ -213,7 +213,7 @@ const NavComponent = () => {
                   dropdownOpen === "test2" ? "-translate-y-6" : "translate-y-0 "
                 }`}
               >
-                <Link to="/schedule">賽程</Link>
+                <Link to="/game">賽程</Link>
               </span>
               <span
                 className={`block transition-transform duration-300   ${
@@ -222,7 +222,7 @@ const NavComponent = () => {
                     : "translate-y-0"
                 }`}
               >
-                <Link to="/schedule">賽程</Link>
+                <Link to="/game">賽程</Link>
               </span>
             </div>
           </li>
