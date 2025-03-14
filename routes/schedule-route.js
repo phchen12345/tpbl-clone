@@ -16,6 +16,37 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  let {
+    gameNumber,
+    day,
+    gameDate,
+    location,
+    hometeam,
+    awayteam,
+    status,
+    category,
+    time,
+  } = req.body;
+  try {
+    let newSchedule = new Schedule({
+      gameNumber,
+      day,
+      gameDate,
+      location,
+      hometeam,
+      awayteam,
+      status,
+      category,
+      time,
+    });
+    await newSchedule.save();
+    res.status(201).json(newSchedule);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 router.get("/:year/:month", async (req, res) => {
   try {
     const year = parseInt(req.params.year, 10);
