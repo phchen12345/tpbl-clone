@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/team", teamRoutes);
 app.use("/schedule", scheduleRoutes);
-app.use(express, static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 if (
   process.env.NODE_ENV === "production" ||
