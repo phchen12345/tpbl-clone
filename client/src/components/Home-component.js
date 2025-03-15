@@ -5,6 +5,7 @@ import bottomImage from "../assets/底部圖片.png";
 import Swipers from "./Swipers";
 import Game from "./Game";
 import tpbltop from "../assets/tpbltop.webp";
+import { useEffect } from "react";
 
 const HomeComponent = () => {
   useEffect(() => {
