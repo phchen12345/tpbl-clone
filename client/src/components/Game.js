@@ -151,7 +151,7 @@ const Game = () => {
                   <p className="text-cn-paragraph-sm mt-2 text-center">
                     {g.awayteam}
                   </p>
-                  <label className="mt-2 w-[44px] bg-slate-400 rounded-full text-label-sm py-1 px-2">
+                  <label className="mt-2 w-[44px] bg-slate-200 rounded-full text-label-sm py-1 px-2">
                     AWAY
                   </label>
                 </div>
