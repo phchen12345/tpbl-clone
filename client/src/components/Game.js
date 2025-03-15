@@ -4,6 +4,8 @@ import { getSchedule } from "../services/schedule.service";
 import youtube from "../assets/youtube.svg";
 import sportcast from "../assets/sportcast.svg";
 import noise from "../assets/noise.webp";
+import ticket from "../assets/ticket.png";
+import statistics from "../assets/Statistics.svg";
 
 const Game = () => {
   const [teams, setTeams] = useState([]);
@@ -58,6 +60,10 @@ const Game = () => {
   const getTeamLogo = (teamName) => {
     const team = teams.find((t) => t.name === teamName);
     return team?.teamlogo || "";
+  };
+  const getTeamTicket = (teamName) => {
+    const team = teams.find((t) => t.name === teamName);
+    return team?.ticketWeb || "";
   };
 
   // 過濾出唯一的日期（只保留有 upcoming 比賽的日期）
@@ -167,15 +173,19 @@ const Game = () => {
               </div>
               <div className="flex justify-around border-b border-gray-300 gap-4">
                 <a
-                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4"
-                  href="https://tw.yahoo.com/"
+                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex gap-2"
+                  href={getTeamTicket(g.hometeam)}
+                  target="_blank"
                 >
+                  <img src={ticket} />
                   <span>購票連結</span>
                 </a>
                 <a
-                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4"
-                  href="https://tw.yahoo.com/"
+                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex gap-2"
+                  href="https://ticket.ibon.com.tw/ActivityInfo/Details/38588"
+                  target="_blank"
                 >
+                  <img src={statistics} className="h-[16px]" />
                   <span>數據統計</span>
                 </a>
               </div>

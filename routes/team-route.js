@@ -119,7 +119,13 @@ router.patch("/:name", async (req, res) => {
     const updates = req.body; // 獲取要更新的字段（例如 { wins: 14, losses: 5, matchHistory: ["W", "L", "W"] }）
 
     // 驗證 updates 只包含允許的字段
-    const allowedFields = ["wins", "loses", "playedGame", "matchHistory"];
+    const allowedFields = [
+      "wins",
+      "loses",
+      "playedGame",
+      "matchHistory",
+      "ticketWeb",
+    ];
     const updateKeys = Object.keys(updates);
     if (!updateKeys.every((key) => allowedFields.includes(key))) {
       return res.status(400).json({ error: "Invalid field in update request" });
@@ -170,6 +176,7 @@ router.patch("/:name", async (req, res) => {
       if (updates.playedGame !== undefined) team.playedGame = newPlayedGame;
       needsRecalculation = true;
     }
+    if (updates.ticketWeb !== undefined) team.ticketWeb = updates.ticketWeb;
 
     // 處理 matchHistory（如果提供）
     if (updates.matchHistory !== undefined) {

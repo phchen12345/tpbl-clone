@@ -2,6 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getSchedule } from "../services/schedule.service";
 import { getTeams } from "../services/team.service";
+import youtube from "../assets/youtube.svg";
+import sportcast from "../assets/sportcast.svg";
+import ticket from "../assets/ticket.png";
+import statistics from "../assets/Statistics.svg";
 
 const Schedule = () => {
   const [selectedOption, setSelectedOption] = useState("全部時間");
@@ -91,8 +95,13 @@ const Schedule = () => {
     const team = teams.find((t) => t.name === teamName);
     return `${team.teamlogo}`;
   };
+  const getTeamTicket = (teamName) => {
+    const team = teams.find((t) => t.name === teamName);
+    return team?.ticketWeb || "";
+  };
 
   useEffect(() => {
+    document.title = "賽程|TPBL";
     fetchTeams();
 
     fetchGameCounts();
@@ -282,12 +291,29 @@ const Schedule = () => {
             <div className="px-8 py-8">
               {/* Game01 */}
 
-              <div className="flex">
+              <div className="flex relative mb-5">
                 <div className="bg-black text-white rounded-full font-semibold">
                   <div className="px-4 ">
                     <span>GAME</span>
                     <span className="pl-1">{game.gameNumber}</span>
                   </div>
+                </div>
+                <div className=" flex justify-center gap-4 items-center absolute right-0">
+                  <span className="text-league-secondary-500 ">TV</span>
+                  <span>
+                    <img
+                      className="h-[15px]"
+                      src="data:image/webp;base64,UklGRvYCAABXRUJQVlA4WAoAAAAQAAAAcwAAEwAAQUxQSHMCAAABkFZtexY5TxxkHQQHqYOMgmUUQBUMVdA42CpYULCsgsHB4IDXwcYB7znkSeh3+zMiHLhtG0mee7oulGO6f8C/devjyeYB2FsB0QLhDKsDYPsahKszZWAHIBzc/sckerYFtIkAZFEdsJxiDXA10juiVra9a0Q/gKdVVTf7Q/J6qt5yLGtQ1RHpVCNWrWgzS40hZIgZZsoQDj+kgcLKvhQCnVpCn2xmHhiFfLewZhKnh2II86EZIVyEODzQ5B9QIHuLH9OSSak0C7ISJiWUXg/5OpAlEuKxwEqRUYS6Uzo/H/JNIuqKTFGOuZmXvGVR65B1wLdD7xBioJnkBKglkpmih9McGUeoDwA092Yy7htqupZNRinUHTjJHHVI51RTC7h4BPheB8JEVs4fpX8DYOZDLyQ5sOJ3zOCcu6g+jOjaHxvAmSOr1Go2Rwf6LDpOKbWOY6vnglDgr0WEe0BR3Hx8nM/QiG7H0D44VxnpyDpWayaAF1V1EwHVrdTlAKQY+aSHbDGiWtDAtr23DtZRBXZv+HnzwHfUbKT+6XhtkDoQVXHFQgWBLzv2i6reeYQVOaXrEqeHme9AzCxmFVlU92ecZI69nkhuvAZUgZ4xk1UpegxFx5ocwFD9MN447g0w6eW6d7hS7Ykm6e5QzxxZk+tzLF+VFDLEQkBiIZUVIomkIkSTqiOVRcjIK3DVRXZHP2JduRKiutpsFUfWHkE1jUV1akCphycSm6oLbnH6KD7G2gyNjn2YtuPZCOW0SbKUTU5/H+jjzQJtvDkAPhZbOAPyRALHWAzMHB0pMCtvcRybuTNLexHpK339aPFnbTaE4PC/uwEAVlA4IFwAAAAQBQCdASp0ABQAPp1InUqiIiIjKBQLULATiWcAy9huAJoSAjXqGbzYDtqidap0JlWMAP70TTcZSmtKFJzrwduVtDgDOgs38w+p/6XJguLlw4uSgBTBenMgYAAAAA=="
+                    />
+                  </span>
+                  <span className="text-league-secondary-500">MOD</span>
+                  <span>
+                    <img className="h-[15px]" src={sportcast} />
+                  </span>
+                  <span className="text-league-secondary-500">OTT</span>
+                  <span>
+                    <img src={youtube} className="h-[15px]" />
+                  </span>
                 </div>
               </div>
               <div className="flex items-center">
@@ -350,13 +376,19 @@ const Schedule = () => {
                   </div>
                 </div>
                 <div className="flex-[0_0_15%] flex flex-col text-center">
-                  <a href="#" className="px-6 py-2 ">
-                    <span className="hover:border-b hover:border-black ">
+                  <a
+                    href={getTeamTicket(game.hometeam)}
+                    target="_blank"
+                    className="px-6 py-2 "
+                  >
+                    <span className="hover:border-b hover:border-black flex justify-center gap-2">
+                      <img src={ticket} className="h-[20px]" />
                       購票連結
                     </span>
                   </a>
                   <a href="#" className="px-6 py-2 ">
-                    <span className="hover:border-b hover:border-black ">
+                    <span className="hover:border-b hover:border-black flex justify-center gap-2">
+                      <img src={statistics} className="h-[20px]" />
                       數據統計
                     </span>
                   </a>

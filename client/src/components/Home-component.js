@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import TableSwitcher from "./TableSwicher";
 import TablePlayerSwitcher from "./TablePlayerSwitcher";
 import bottomImage from "../assets/底部圖片.png";
@@ -8,6 +7,9 @@ import Game from "./Game";
 import tpbltop from "../assets/tpbltop.webp";
 
 const HomeComponent = () => {
+  useEffect(() => {
+    document.title = "TPBL";
+  });
   return (
     <main className=" ">
       <section

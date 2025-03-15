@@ -34,6 +34,7 @@ const teamSchema = new Schema({
     type: String,
   },
   matchHistory: [String],
+  ticketWeb: {},
 });
 
 module.exports = mongoose.model("Team", teamSchema);
