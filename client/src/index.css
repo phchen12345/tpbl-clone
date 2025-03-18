@@ -44,7 +44,7 @@ li {
   padding-top: 1;
 }
 #bg1 {
-  background-image: url("file:///C:/Users/user/Downloads/bg.Vm1wR9NE-1.webp");
+  background-image: url("./assets/homebg1.png");
   background-size: cover;
 }
 .bg2 {
@@ -257,7 +257,7 @@ li {
     background-color: #fff6;
   }
   footer {
-    background-image: url("file:///C:/Users/user/Downloads/footer.DqGuclCA.webp");
+    background-image: url("./assets/footer.webp");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
