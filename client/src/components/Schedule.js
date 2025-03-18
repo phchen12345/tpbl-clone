@@ -119,9 +119,11 @@ const Schedule = () => {
       <section className="bg-inner-head mb-20 max-sm:mb-10">
         <div className="bg2 pb-20 pt-[125px]">
           <div className="flex col-span-12">
-            <div className="flex items-center gap-6">
-              <h2 className="text-white text-en-display-3">Schedule</h2>
-              <h2 className="text-white text-league-secondary text-cn-heading-4">
+            <div className="flex items-center gap-6 max-sm:block pl-[1rem]">
+              <h2 className="text-white text-en-display-3 max-sm:text-en-heading-4">
+                Schedule
+              </h2>
+              <h2 className="text-white text-league-secondary text-cn-heading-4 max-sm:text-cn-paragraph-xl">
                 賽程
               </h2>
             </div>
@@ -130,7 +132,7 @@ const Schedule = () => {
       </section>
       <section className="bg2 mb-12">
         <div className="flex flex-wrap col-span-12 items-center justify-between">
-          <div className=" flex  cursor-pointer ">
+          <div className=" flex max-sm:mx-auto  cursor-pointer ">
             <div
               onClick={() => setSelectedStatus("upcoming")}
               className="relative "
@@ -169,8 +171,8 @@ const Schedule = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-2 relative flex-wrap">
-            <div className="hover:border-black duration-200 relative bg-white   border border-league-secondary-100 flex  ">
+          <div className="flex gap-2 relative flex-wrap mx-[1rem] mt-[2rem]">
+            <div className="hover:border-black duration-200 relative bg-white   border border-league-secondary-100 flex max-sm:flex-[0_0_100%]">
               <div className="min-w-[115px] py-[18px] flex-1 px-4 font-medium">
                 {selectedOption1}
               </div>
@@ -185,7 +187,7 @@ const Schedule = () => {
               </select>
             </div>
             <div
-              className={`hover:border-black duration-200 relative bg-white border flex h-full ${
+              className={`hover:border-black  duration-200 relative bg-white border flex h-full max-sm:flex-[0_0_100%] ${
                 Month === "" ? "border-league-secondary-100" : "border-black "
               }`}
             >
@@ -220,7 +222,7 @@ const Schedule = () => {
               </select>
             </div>
             <div
-              className={`hover:border-black duration-200 relative bg-white border  ${
+              className={`hover:border-black duration-200 relative bg-white border max-sm:flex-[0_0_100%] ${
                 selectedTeam === ""
                   ? "border-league-secondary-100"
                   : "border-black "
@@ -252,7 +254,7 @@ const Schedule = () => {
               </select>
             </div>
             <div
-              className={`hover:border-black duration-200 relative bg-white border  ${
+              className={`hover:border-black duration-200 relative bg-white border max-sm:flex-[0_0_100%] ${
                 selectedCategory === ""
                   ? "border-league-secondary-100"
                   : "border-black "
@@ -292,27 +294,33 @@ const Schedule = () => {
             <div className="px-8 py-8 max-sm:px-0 max-sm:py-0">
               {/* GameNumber */}
               <div className="flex  relative mb-5  max-sm:flex-wrap-reverse">
-                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-0 max-sm:top-[2.5rem]">
+                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-5 max-sm:top-[2.5rem] max-sm:text-label-sm">
                   <div className="px-4 ">
                     <span>GAME</span>
-                    <span className="pl-1">{game.gameNumber}</span>
+                    <span className="pl-1 ">{game.gameNumber}</span>
                   </div>
                 </div>
-                <div className=" flex justify-center gap-4 items-center absolute right-0 max-sm:relative max-sm:broadcate max-sm:w-full">
-                  <span className="text-league-secondary-500 ">TV</span>
+                <div className=" flex justify-center gap-4 items-center absolute right-0 max-sm:relative max-sm:broadcate max-sm:w-full max-sm:py-2">
+                  <span className="text-league-secondary-500 max-sm:text-label-sm">
+                    TV
+                  </span>
                   <span>
                     <img
-                      className="h-[15px]"
+                      className="h-[15px] max-sm:h-[10px]"
                       src="data:image/webp;base64,UklGRvYCAABXRUJQVlA4WAoAAAAQAAAAcwAAEwAAQUxQSHMCAAABkFZtexY5TxxkHQQHqYOMgmUUQBUMVdA42CpYULCsgsHB4IDXwcYB7znkSeh3+zMiHLhtG0mee7oulGO6f8C/devjyeYB2FsB0QLhDKsDYPsahKszZWAHIBzc/sckerYFtIkAZFEdsJxiDXA10juiVra9a0Q/gKdVVTf7Q/J6qt5yLGtQ1RHpVCNWrWgzS40hZIgZZsoQDj+kgcLKvhQCnVpCn2xmHhiFfLewZhKnh2II86EZIVyEODzQ5B9QIHuLH9OSSak0C7ISJiWUXg/5OpAlEuKxwEqRUYS6Uzo/H/JNIuqKTFGOuZmXvGVR65B1wLdD7xBioJnkBKglkpmih9McGUeoDwA092Yy7htqupZNRinUHTjJHHVI51RTC7h4BPheB8JEVs4fpX8DYOZDLyQ5sOJ3zOCcu6g+jOjaHxvAmSOr1Go2Rwf6LDpOKbWOY6vnglDgr0WEe0BR3Hx8nM/QiG7H0D44VxnpyDpWayaAF1V1EwHVrdTlAKQY+aSHbDGiWtDAtr23DtZRBXZv+HnzwHfUbKT+6XhtkDoQVXHFQgWBLzv2i6reeYQVOaXrEqeHme9AzCxmFVlU92ecZI69nkhuvAZUgZ4xk1UpegxFx5ocwFD9MN447g0w6eW6d7hS7Ykm6e5QzxxZk+tzLF+VFDLEQkBiIZUVIomkIkSTqiOVRcjIK3DVRXZHP2JduRKiutpsFUfWHkE1jUV1akCphycSm6oLbnH6KD7G2gyNjn2YtuPZCOW0SbKUTU5/H+jjzQJtvDkAPhZbOAPyRALHWAzMHB0pMCtvcRybuTNLexHpK339aPFnbTaE4PC/uwEAVlA4IFwAAAAQBQCdASp0ABQAPp1InUqiIiIjKBQLULATiWcAy9huAJoSAjXqGbzYDtqidap0JlWMAP70TTcZSmtKFJzrwduVtDgDOgs38w+p/6XJguLlw4uSgBTBenMgYAAAAA=="
                     />
                   </span>
-                  <span className="text-league-secondary-500">MOD</span>
-                  <span>
-                    <img className="h-[15px]" src={sportcast} />
+                  <span className="text-league-secondary-500 max-sm:text-label-sm">
+                    MOD
                   </span>
-                  <span className="text-league-secondary-500">OTT</span>
                   <span>
-                    <img src={youtube} className="h-[15px]" />
+                    <img className="h-[15px] max-sm:h-[10px]" src={sportcast} />
+                  </span>
+                  <span className="text-league-secondary-500 max-sm:text-label-sm">
+                    OTT
+                  </span>
+                  <span>
+                    <img src={youtube} className="h-[15px] max-sm:h-[10px]" />
                   </span>
                 </div>
               </div>
@@ -339,13 +347,13 @@ const Schedule = () => {
                       </div>
                       <div className="">{getTeamWinLose(game.awayteam)}</div>
                     </div>
-                    <div className="text-center max-sm:flex-col-reverse max-sm:flex">
+                    <div className="text-center max-sm:flex max-sm:flex-col-reverse">
                       <img
                         src={getTeamLogo(game.awayteam)}
                         width="96"
                         className="mb-2"
                       />
-                      <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 ">
+                      <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 max-sm:text-label-sm mx-auto">
                         AWAY
                       </label>
                     </div>
@@ -357,13 +365,13 @@ const Schedule = () => {
                     </span>
                   </div>
                   <div className="flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap ">
-                    <div className="text-center max-sm:flex-col-reverse max-sm:flex">
+                    <div className="text-center  justify-center max-sm:flex max-sm:flex-col-reverse">
                       <img
                         src={getTeamLogo(game.hometeam)}
                         width="96"
-                        className="mb-2"
+                        className="mb-2 "
                       />
-                      <label className="bg-league-primary text-white rounded-full text-label-sm py-1 px-2 ">
+                      <label className="bg-league-primary text-white rounded-full text-label-sm py-1 px-2 mx-auto">
                         HOME
                       </label>
                     </div>
@@ -375,21 +383,27 @@ const Schedule = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex-[0_0_15%] flex flex-col text-center max-sm:flex-row max-sm:justify-center">
+                <div className="flex-[0_0_15%] flex flex-col text-center max-sm:flex-row max-sm:justify-around">
                   <a
                     href={getTeamTicket(game.hometeam)}
                     target="_blank"
                     className="px-6 py-2 "
                   >
-                    <span className="hover:underline underline-offset-4  flex justify-center gap-2">
-                      <img src={ticket} className="h-[20px]" />
-                      購票連結
+                    <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
+                      <img
+                        src={ticket}
+                        className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
+                      />
+                      <span>購票連結</span>
                     </span>
                   </a>
                   <a href="#" className="px-6 py-2 ">
-                    <span className="hover:underline underline-offset-4  flex justify-center gap-2">
-                      <img src={statistics} className="h-[20px]" />
-                      數據統計
+                    <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
+                      <img
+                        src={statistics}
+                        className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
+                      />
+                      <span>數據統計</span>
                     </span>
                   </a>
                 </div>
