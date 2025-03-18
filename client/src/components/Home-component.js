@@ -172,7 +172,7 @@ const HomeComponent = () => {
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover "
+                  className="aspect-[9/16] object-cover w-full"
                   src="https://i.ytimg.com/vi/9GXPA94QufM/sddefault.jpg"
                 />
               </a>
@@ -189,7 +189,7 @@ const HomeComponent = () => {
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover "
+                  className="aspect-[9/16] object-cover w-full"
                   src="https://i.ytimg.com/vi/vZ5SrUACdOY/sddefault.jpg"
                 />
               </a>
@@ -237,7 +237,7 @@ const HomeComponent = () => {
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover "
+                  className="aspect-[9/16] object-cover w-full"
                   src="https://i.ytimg.com/vi/BL8sCrI12zA/sddefault.jpg"
                 />
               </a>
