@@ -45,7 +45,7 @@ const Game = () => {
     try {
       const [year, month, day] = date.split("-");
       const res = await fetch(
-        `http://localhost:8080/schedule/${year}/${month}/${day}`
+        `https://tpbl-clone.onrender.com/schedule/${year}/${month}/${day}`
       );
       const data = await res.json();
       const upcomingGames = data.filter((game) => game.status === "upcoming");
