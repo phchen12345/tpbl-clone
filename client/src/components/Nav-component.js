@@ -406,7 +406,8 @@ const NavComponent = () => {
                     </div>
                     <a
                       key={index}
-                      href="#"
+                      href={team.ticketWeb}
+                      target="_blank"
                       className="block px-1  hover:text-league-secondary"
                     >
                       {team.name}
