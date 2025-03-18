@@ -159,20 +159,20 @@ const HomeComponent = () => {
           </div>
         </div>
       </section>
-      <section className="bg3  ">
+      <section className="bg3  max-sm:mx-[1rem]">
         <div className="mb-10">
           <div className="flex justify-between mb-5">
             <span className="text-en-heading-4">Pickup Video</span>
             <span className="text-cn-paragraph-xl ">精選圖片</span>
           </div>
-          <div className="flex gap-4 ">
-            <div className="relative">
+          <div className="flex gap-4 max-sm:overflow-x-scroll ">
+            <div className="relative smallvideo">
               <a
                 href="https://www.youtube.com/watch?v=9GXPA94QufM"
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover w-full"
+                  className="aspect-[9/16] object-cover "
                   src="https://i.ytimg.com/vi/9GXPA94QufM/sddefault.jpg"
                 />
               </a>
@@ -183,13 +183,13 @@ const HomeComponent = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative smallvideo">
               <a
                 href="https://www.youtube.com/watch?v=vZ5SrUACdOY"
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover w-full"
+                  className="aspect-[9/16] object-cover "
                   src="https://i.ytimg.com/vi/vZ5SrUACdOY/sddefault.jpg"
                 />
               </a>
@@ -199,7 +199,7 @@ const HomeComponent = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative smallvideo">
               <a
                 href="https://www.youtube.com/watch?v=i1EQVxt1eBM"
                 target="_blank"
@@ -215,7 +215,7 @@ const HomeComponent = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative smallvideo">
               <a
                 href="https://www.youtube.com/watch?v=MTI4RNztGb8"
                 target="_blank"
@@ -231,13 +231,13 @@ const HomeComponent = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative smallvideo">
               <a
                 href="https://www.youtube.com/watch?v=BL8sCrI12zA"
                 target="_blank"
               >
                 <img
-                  className="aspect-[9/16] object-cover w-full"
+                  className="aspect-[9/16] object-cover "
                   src="https://i.ytimg.com/vi/BL8sCrI12zA/sddefault.jpg"
                 />
               </a>
@@ -249,8 +249,8 @@ const HomeComponent = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white flex gap-3">
-          <div className="bg-white flex-1">
+        <div className="flex gap-3 max-sm:overflow-x-scroll">
+          <div className="bg-white  smallvideo2 flex-1">
             <div className="relative">
               <a
                 href="https://www.youtube.com/watch?v=lA5iDl_8kdw "
@@ -318,7 +318,7 @@ const HomeComponent = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white flex-1">
+          <div className="bg-white smallvideo2 flex-1">
             <div className="relative">
               <a
                 href="https://www.youtube.com/watch?v=lA5iDl_8kdw "
@@ -384,7 +384,7 @@ const HomeComponent = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white flex-1">
+          <div className="bg-white smallvideo2 flex-1">
             <div className="relative">
               <a
                 href="https://www.youtube.com/watch?v=lA5iDl_8kdw "
@@ -392,7 +392,7 @@ const HomeComponent = () => {
               >
                 <div className="relative ">
                   <img
-                    className="object-cover w-full aspect-[16/9]"
+                    className="object-cover  aspect-[16/9]"
                     src="https://i.ytimg.com/vi/Kkk8XQeqy14/sddefault.jpg"
                   />
                 </div>
@@ -453,7 +453,7 @@ const HomeComponent = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white flex-1">
+          <div className="bg-white smallvideo2 flex-1">
             <div className="relative">
               <a
                 href="https://www.youtube.com/watch?v=lA5iDl_8kdw "

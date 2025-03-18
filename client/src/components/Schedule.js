@@ -116,7 +116,7 @@ const Schedule = () => {
 
   return (
     <div className="mb-[200px]">
-      <section className="bg-inner-head mb-20 ">
+      <section className="bg-inner-head mb-20 max-sm:mb-10">
         <div className="bg2 pb-20 pt-[125px]">
           <div className="flex col-span-12">
             <div className="flex items-center gap-6">
@@ -129,7 +129,7 @@ const Schedule = () => {
         </div>
       </section>
       <section className="bg2 mb-12">
-        <div className="flex col-span-12 items-center justify-between">
+        <div className="flex flex-wrap col-span-12 items-center justify-between">
           <div className=" flex  cursor-pointer ">
             <div
               onClick={() => setSelectedStatus("upcoming")}
@@ -169,7 +169,7 @@ const Schedule = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-2 relative">
+          <div className="flex gap-2 relative flex-wrap">
             <div className="hover:border-black duration-200 relative bg-white   border border-league-secondary-100 flex  ">
               <div className="min-w-[115px] py-[18px] flex-1 px-4 font-medium">
                 {selectedOption1}
@@ -287,19 +287,18 @@ const Schedule = () => {
         {games.map((game, index) => (
           <div
             key={index}
-            className=" bg-white col-span-12 my-8 border-b border-league-secondary-100"
+            className=" bg-white col-span-12 my-8 border-b border-league-secondary-100 max-sm:my-0"
           >
-            <div className="px-8 py-8">
-              {/* Game01 */}
-
-              <div className="flex relative mb-5">
-                <div className="bg-black text-white rounded-full font-semibold">
+            <div className="px-8 py-8 max-sm:px-0 max-sm:py-0">
+              {/* GameNumber */}
+              <div className="flex  relative mb-5  max-sm:flex-wrap-reverse">
+                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-0 max-sm:top-[2.5rem]">
                   <div className="px-4 ">
                     <span>GAME</span>
                     <span className="pl-1">{game.gameNumber}</span>
                   </div>
                 </div>
-                <div className=" flex justify-center gap-4 items-center absolute right-0">
+                <div className=" flex justify-center gap-4 items-center absolute right-0 max-sm:relative max-sm:broadcate max-sm:w-full">
                   <span className="text-league-secondary-500 ">TV</span>
                   <span>
                     <img
@@ -317,36 +316,36 @@ const Schedule = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex items-center">
-                <div className="flex-[0_0_15%]">
-                  <span className="text-en-heading-4 ">
+              <div className="flex items-center max-sm:block max-sm:px-4 ">
+                <div className="flex-[0_0_15%] max-sm:flex max-sm:mb-[1rem]">
+                  <span className="text-en-heading-4 max-sm:text-en-heading-6">
                     {new Date(game.gameDate).toLocaleDateString("zh-TW", {
                       month: "2-digit",
                       day: "2-digit",
                     })}
                   </span>
-                  <span className="text-en-paragraph-sm pl-2">
+                  <span className="text-en-paragraph-sm px-2 max-sm:pt-1.5">
                     ({game.day})
                   </span>
-                  <div className="flex text-en-heading-5 text-league-primary-600">
+                  <div className="flex text-en-heading-5 text-league-primary-600 max-sm:text-en-heading-6">
                     {game.time}
                   </div>
                 </div>
-                <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100">
-                  <div className=" flex flex-[0_0_30%] justify-end items-center">
+                <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100 max-sm:flex-[0_0_100%] max-sm:border-x-0">
+                  <div className=" flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap max-sm:flex-col-reverse">
                     <div className="relative text-center py-5 px-1">
-                      <div className="text-cn-paragraph-xl font-bold ">
+                      <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
                         {game.awayteam}
                       </div>
                       <div className="">{getTeamWinLose(game.awayteam)}</div>
                     </div>
-                    <div className="text-center  ">
+                    <div className="text-center max-sm:flex-col-reverse max-sm:flex">
                       <img
                         src={getTeamLogo(game.awayteam)}
                         width="96"
                         className="mb-2"
                       />
-                      <label className="bg-slate-300  rounded-full text-label-sm  py-1 px-2 ">
+                      <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 ">
                         AWAY
                       </label>
                     </div>
@@ -357,8 +356,8 @@ const Schedule = () => {
                       {game.location}
                     </span>
                   </div>
-                  <div className="flex flex-[0_0_30%]">
-                    <div className="text-center">
+                  <div className="flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap ">
+                    <div className="text-center max-sm:flex-col-reverse max-sm:flex">
                       <img
                         src={getTeamLogo(game.hometeam)}
                         width="96"
@@ -369,14 +368,14 @@ const Schedule = () => {
                       </label>
                     </div>
                     <div className="relative text-center py-5 px-1">
-                      <div className="text-cn-paragraph-xl font-bold">
+                      <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
                         {game.hometeam}
                       </div>
                       <div className="">{getTeamWinLose(game.hometeam)}</div>
                     </div>
                   </div>
                 </div>
-                <div className="flex-[0_0_15%] flex flex-col text-center">
+                <div className="flex-[0_0_15%] flex flex-col text-center max-sm:flex-row max-sm:justify-center">
                   <a
                     href={getTeamTicket(game.hometeam)}
                     target="_blank"
