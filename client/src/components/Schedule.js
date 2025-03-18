@@ -34,7 +34,7 @@ const Schedule = () => {
   };
 
   const fetchGameCounts = async () => {
-    let url = `https://tpbl-clone.onrender.com/schedule/`;
+    let url = `http://localhost:8080/schedule/`;
     if (Month) {
       const [year, month] = Month.split("-");
       url += `${year}/${month}`;
@@ -63,7 +63,7 @@ const Schedule = () => {
   };
 
   const fetchGames = async (year, month) => {
-    let url = `https://tpbl-clone.onrender.com/schedule/`;
+    let url = `http://localhost:8080/schedule/`;
     if (Month) {
       const [year, month] = Month.split("-");
       url += `${year}/${month}`;
@@ -95,13 +95,14 @@ const Schedule = () => {
     const team = teams.find((t) => t.name === teamName);
     return `${team.teamlogo}`;
   };
+
   const getTeamTicket = (teamName) => {
     const team = teams.find((t) => t.name === teamName);
     return team?.ticketWeb || "";
   };
 
   useEffect(() => {
-    document.title = "賽程|TPBL";
+    document.title = "賽程 | TPBL";
     fetchTeams();
 
     fetchGameCounts();
@@ -345,7 +346,7 @@ const Schedule = () => {
                         width="96"
                         className="mb-2"
                       />
-                      <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 ">
+                      <label className="bg-slate-300  rounded-full text-label-sm  py-1 px-2 ">
                         AWAY
                       </label>
                     </div>
@@ -381,13 +382,13 @@ const Schedule = () => {
                     target="_blank"
                     className="px-6 py-2 "
                   >
-                    <span className="hover:underline underline-offset-4 flex justify-center gap-2">
+                    <span className="hover:underline underline-offset-4  flex justify-center gap-2">
                       <img src={ticket} className="h-[20px]" />
                       購票連結
                     </span>
                   </a>
                   <a href="#" className="px-6 py-2 ">
-                    <span className="hover:underline underline-offset-4 flex justify-center gap-2">
+                    <span className="hover:underline underline-offset-4  flex justify-center gap-2">
                       <img src={statistics} className="h-[20px]" />
                       數據統計
                     </span>

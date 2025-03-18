@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TableScore from "../constants/TableScore";
-import noise from "../assets/noise.webp";
+import TableRebounds from "../constants/TableRebounds";
+import TableAssist from "../constants/TableAssist";
+import TableSteal from "../constants/TableSteal";
+import TableBlock from "../constants/TableBlock";
 
 const TablePlayerSwitcher = () => {
   const [activeTab, setActiveTab] = useState("Score");
@@ -12,10 +15,7 @@ const TablePlayerSwitcher = () => {
     <div>
       <div className="bg-linear w-full h-[56px] relative ">
         <div className="triangle2 absolute right-0"></div>
-        <div
-          style={{ backgroundImage: `url(${noise})` }}
-          className="table-bg  h-[56px] mt-[1rem] flex justify-center items-center"
-        >
+        <div className="table-bg  h-[56px] mt-[1rem] flex justify-center items-center">
           <div className="flex relative flex-1 justify-center items-center">
             <span
               className="text-cn-paragraph-xl font-bold cursor-pointer"
@@ -98,13 +98,13 @@ const TablePlayerSwitcher = () => {
           {activeTab === "Score" ? (
             <TableScore />
           ) : activeTab === "Rebounds" ? (
-            "籃板資料表"
+            <TableRebounds />
           ) : activeTab === "Assists" ? (
-            "助攻資料表"
+            <TableAssist />
           ) : activeTab === "Steals" ? (
-            "抄截資料表"
+            <TableSteal />
           ) : activeTab === "Blocks" ? (
-            "阻攻資料表"
+            <TableBlock />
           ) : (
             ""
           )}

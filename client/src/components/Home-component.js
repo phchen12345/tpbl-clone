@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TableSwitcher from "./TableSwicher";
 import TablePlayerSwitcher from "./TablePlayerSwitcher";
 import bottomImage from "../assets/底部圖片.png";
 import Swipers from "./Swipers";
 import Game from "./Game";
-import tpbltop from "../assets/tpbltop.webp";
-import { useEffect } from "react";
 
 const HomeComponent = () => {
   useEffect(() => {
@@ -13,11 +11,7 @@ const HomeComponent = () => {
   });
   return (
     <main className=" ">
-      <section
-        style={{ backgroundImage: `url(${tpbltop})` }}
-        id="bg1"
-        className="  relative    pt-[112px]"
-      >
+      <section id="bg1" className="  relative    pt-[112px]">
         <div className="flex justify-center w-full h-full  ">
           <Swipers />
         </div>

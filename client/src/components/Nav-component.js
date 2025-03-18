@@ -213,7 +213,7 @@ const NavComponent = () => {
                   dropdownOpen === "test2" ? "-translate-y-6" : "translate-y-0 "
                 }`}
               >
-                <Link to="/game">賽程</Link>
+                <Link to="/schedule">賽程</Link>
               </span>
               <span
                 className={`block transition-transform duration-300   ${
@@ -222,7 +222,7 @@ const NavComponent = () => {
                     : "translate-y-0"
                 }`}
               >
-                <Link to="/game">賽程</Link>
+                <Link to="/schedule">賽程</Link>
               </span>
             </div>
           </li>
@@ -406,7 +406,8 @@ const NavComponent = () => {
                     </div>
                     <a
                       key={index}
-                      href="#"
+                      href={team.ticketWeb}
+                      target="_blank"
                       className="block px-1  hover:text-league-secondary"
                     >
                       {team.name}
@@ -449,15 +450,9 @@ const NavComponent = () => {
           </li>
           <li className=" flex  navHover space-x-4">
             <a className="masked-linedin hover:text-league-secondary duration-200"></a>
-            <a>
-              <img src={facebook} />
-            </a>
-            <a>
-              <img src={instagram} />
-            </a>
-            <a>
-              <img src={youtube} />
-            </a>
+            <a className="masked-facebook hover:text-league-secondary duration-200"></a>
+            <a className="masked-instagram hover:text-league-secondary duration-200"></a>
+            <a className="masked-youtube hover:text-league-secondary duration-200"></a>
           </li>
         </ul>
 

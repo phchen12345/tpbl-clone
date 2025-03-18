@@ -1,12 +1,8 @@
 import React from "react";
 import TPBL from "../assets/TPBLlogo.png";
-import footer from "../assets/footer.webp";
 const Footer = () => {
   return (
-    <footer
-      className="bg-dark  py-4 px-10"
-      style={{ backgroundImage: `url(${footer})` }}
-    >
+    <footer className="bg-dark  py-4 px-10">
       <nav className="flex items-center justify-center text-white">
         <p className=" font-medium ">© TPBL LEAGUE 2024 All rights reserved.</p>
         <ul className="text-white flex gap-4 mx-auto font-bold">

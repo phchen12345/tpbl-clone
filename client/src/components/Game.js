@@ -3,7 +3,6 @@ import { getTeams } from "../services/team.service";
 import { getSchedule } from "../services/schedule.service";
 import youtube from "../assets/youtube.svg";
 import sportcast from "../assets/sportcast.svg";
-import noise from "../assets/noise.webp";
 import ticket from "../assets/ticket.png";
 import statistics from "../assets/Statistics.svg";
 
@@ -46,7 +45,7 @@ const Game = () => {
     try {
       const [year, month, day] = date.split("-");
       const res = await fetch(
-        `https://tpbl-clone.onrender.com/schedule/${year}/${month}/${day}`
+        `http://localhost:8080/schedule/${year}/${month}/${day}`
       );
       const data = await res.json();
       const upcomingGames = data.filter((game) => game.status === "upcoming");
@@ -61,6 +60,7 @@ const Game = () => {
     const team = teams.find((t) => t.name === teamName);
     return team?.teamlogo || "";
   };
+
   const getTeamTicket = (teamName) => {
     const team = teams.find((t) => t.name === teamName);
     return team?.ticketWeb || "";
@@ -98,10 +98,7 @@ const Game = () => {
         </div>
         <div className="bg-linear w-full  relative  ">
           <div className=" triangle2 absolute right-0 "></div>
-          <div
-            style={{ backgroundImage: `url(${noise})` }}
-            className="table-bg  flex items-center   gap-3 overflow-x-scroll overflow-y-hidden pl-20 py-[0.4rem] "
-          >
+          <div className="table-bg  flex items-center   gap-3 overflow-x-scroll overflow-y-hidden pl-20 py-[0.4rem] ">
             {getUniqueDates()
               .slice(0, 7)
               .map((g, index) => (
@@ -171,9 +168,9 @@ const Game = () => {
                   </label>
                 </div>
               </div>
-              <div className="flex justify-around border-b border-gray-300 gap-4">
+              <div className="flex  border-b border-gray-300 gap-4">
                 <a
-                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex gap-2"
+                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex justify-center flex-1 gap-2"
                   href={getTeamTicket(g.hometeam)}
                   target="_blank"
                 >
@@ -181,8 +178,8 @@ const Game = () => {
                   <span>購票連結</span>
                 </a>
                 <a
-                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex gap-2"
-                  href="https://ticket.ibon.com.tw/ActivityInfo/Details/38588"
+                  className="bg-white text-cn-paragraph-sm py-4 hover:underline underline-offset-4 flex justify-center flex-1 gap-2"
+                  href="#"
                   target="_blank"
                 >
                   <img src={statistics} className="h-[16px]" />
