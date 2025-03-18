@@ -402,3 +402,20 @@ li {
     max-width: 1560px;
   }
 }
+@media (width < 640px) {
+  .smallvideo {
+    max-width: 356px;
+    flex-shrink: 0;
+  }
+  .smallvideo2 {
+    flex: 1;
+    flex-basis: 0;
+    min-width: 80%;
+  }
+  footer {
+    background-image: url("./assets/footer2.webp");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
