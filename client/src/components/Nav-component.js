@@ -9,12 +9,25 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import youtube from "../assets/youtube.png";
 import TPBL from "../assets/TPBLlogo.png";
+import circle from "../assets/whiteCircle.svg";
+import button from "../assets/menu.svg";
+import x from "../assets/x.svg";
 
 const NavComponent = () => {
+  // 控制選單按鈕
+  const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [subDropdownOpen, setSubDropdownOpen] = useState(false);
   const [teams, setTeams] = useState([]);
+
+  const opendropdown = (e) => {
+    setIsOpen(!isOpen);
+  };
+
+  const closedropdown = (e) => {
+    setIsOpen(false);
+  };
 
   const controlSetDropdownOpen = (tab) => {
     setDropdownOpen(tab);
@@ -38,6 +51,191 @@ const NavComponent = () => {
 
   return (
     <header className="  fixed w-full top-0 left-0 z-50">
+      <div
+        className={`bg-black absolute top-[80px] left-0 w-full h-[100vh] transition-all duration-500 transform origin-top overflow-auto overscroll-contain ${
+          isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
+        }`}
+      >
+        <ul className="text-white px-4 py-6 cursor-pointer">
+          <li
+            onClick={() => setMenuOpen(menuOpen === "isli1" ? null : "isli1")}
+          >
+            <a
+              className={`flex px-4 py-6 justify-between ${
+                menuOpen === "isli1" ? "text-league-secondary" : ""
+              }`}
+            >
+              關於聯盟
+              <div
+                className={`chevron-right duration-300 ${
+                  menuOpen === "isli1" ? "rotate-[270deg]" : "rotate-90"
+                }`}
+              ></div>
+            </a>
+            <ul
+              className={`text-league-secondary-400 transition-all duration-500 origin-top overflow-hidden  ${
+                menuOpen === "isli1"
+                  ? "opcity-100 scale-y-100 h-full"
+                  : "opcity-0 scale-y-0 h-0 "
+              }`}
+            >
+              <li>
+                <a className="flex px-1 py-4">關於聯盟</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">聯盟團隊</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">聯盟賽務</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">選秀</a>
+              </li>
+            </ul>
+          </li>
+          <li
+            onClick={() => setMenuOpen(menuOpen === "isli2" ? null : "isli2")}
+          >
+            <a
+              className={`flex px-4 py-6 justify-between ${
+                menuOpen === "isli2" ? "text-league-secondary" : ""
+              }`}
+            >
+              球隊
+              <div
+                className={`chevron-right duration-300 ${
+                  menuOpen === "isli2" ? "rotate-[270deg]" : "rotate-90"
+                }`}
+              ></div>
+            </a>
+            <ul
+              className={`text-league-secondary-400 transition-all duration-500 origin-top overflow-hidden  ${
+                menuOpen === "isli2"
+                  ? "opcity-100 scale-y-100 h-full"
+                  : "opcity-0 scale-y-0 h-0 "
+              }`}
+            >
+              {teams.map((team, index) => (
+                <li key={index}>
+                  <a className="flex px-1 py-4">{team.name}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li>
+            <a href="http://localhost:3000/schedule" className="flex px-4 py-6">
+              賽程
+            </a>
+          </li>
+          <li
+            onClick={() => setMenuOpen(menuOpen === "isli3" ? null : "isli3")}
+          >
+            <a
+              className={`flex px-4 py-6 justify-between ${
+                menuOpen === "isli3" ? "text-league-secondary" : ""
+              }`}
+            >
+              比賽數據
+              <div
+                className={`chevron-right duration-300 ${
+                  menuOpen === "isli3" ? "rotate-[270deg]" : "rotate-90"
+                }`}
+              ></div>
+            </a>
+            <ul
+              className={`text-league-secondary-400 transition-all duration-500 origin-top overflow-hidden  ${
+                menuOpen === "isli3"
+                  ? "opcity-100 scale-y-100 h-full"
+                  : "opcity-0 scale-y-0 h-0 "
+              }`}
+            >
+              <li>
+                <a className="flex px-1 py-4">球隊數據</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">球員數據</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">數據排行</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">特殊表現</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a className="flex px-4 py-6">最新消息</a>
+          </li>
+          <li
+            onClick={() => setMenuOpen(menuOpen === "isli4" ? null : "isli4")}
+          >
+            <a
+              className={`flex px-4 py-6 justify-between ${
+                menuOpen === "isli4" ? "text-league-secondary" : ""
+              }`}
+            >
+              獎項
+              <div
+                className={`chevron-right duration-300 ${
+                  menuOpen === "isli4" ? "rotate-[270deg]" : "rotate-90"
+                }`}
+              ></div>
+            </a>
+            <ul
+              className={`text-league-secondary-400 transition-all duration-500 origin-top overflow-hidden  ${
+                menuOpen === "isli4"
+                  ? "opcity-100 scale-y-100 h-full"
+                  : "opcity-0 scale-y-0 h-0 "
+              }`}
+            >
+              <li>
+                <a className="flex px-1 py-4">歷屆獎項</a>
+              </li>
+              <li>
+                <a className="flex px-1 py-4">票選活動</a>
+              </li>
+            </ul>
+          </li>
+          <li
+            onClick={() => setMenuOpen(menuOpen === "isli5" ? null : "isli5")}
+          >
+            <a
+              className={`flex px-4 py-6 justify-between ${
+                menuOpen === "isli5" ? "text-league-secondary" : ""
+              }`}
+            >
+              購票
+              <div
+                className={`chevron-right duration-300 ${
+                  menuOpen === "isli5" ? "rotate-[270deg]" : "rotate-90"
+                }`}
+              ></div>
+            </a>
+            <ul
+              className={`text-league-secondary-400 transition-all duration-500 origin-top overflow-hidden  ${
+                menuOpen === "isli5"
+                  ? "opcity-100 scale-y-100 h-full"
+                  : "opcity-0 scale-y-0 h-0 "
+              }`}
+            >
+              {teams.map((team, index) => (
+                <li>
+                  <a className="flex px-1 py-4">{team.name}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li>
+            <a className="flex px-4 py-6">訂閱電子報</a>
+          </li>
+        </ul>
+        <div className="flex   navHover text-white justify-center gap-x-6 ">
+          <a className="masked-linedin hover:text-league-secondary duration-200  m-4"></a>
+          <a className="masked-facebook hover:text-league-secondary duration-200 m-4"></a>
+          <a className="masked-instagram hover:text-league-secondary duration-200 m-4"></a>
+          <a className="masked-youtube hover:text-league-secondary duration-200 m-4"></a>
+        </div>
+      </div>
       <nav className="relative    mx-20  flex justify-between items-center bg-black max-xl:mx-5 ">
         <div className=" relative right-5 w-5 h-20 bg-black "></div>
         <div className="max-xl:absolute max-xl:left-0 mr-10">
@@ -46,7 +244,7 @@ const NavComponent = () => {
           </Link>
         </div>
 
-        <ul className=" hover:cursor-pointer  flex h-20  relative   text-white  bg-black max-xl:hidden">
+        <ul className=" hover:cursor-pointer  flex h-20  relative   text-white  bg-black max-md:hidden">
           <li
             onMouseEnter={() => controlSetDropdownOpen("test")}
             onMouseLeave={() => setDropdownOpen(false)}
@@ -213,7 +411,7 @@ const NavComponent = () => {
                   dropdownOpen === "test2" ? "-translate-y-6" : "translate-y-0 "
                 }`}
               >
-                <Link to="/game">賽程</Link>
+                <Link to="/schedule">賽程</Link>
               </span>
               <span
                 className={`block transition-transform duration-300   ${
@@ -222,7 +420,7 @@ const NavComponent = () => {
                     : "translate-y-0"
                 }`}
               >
-                <Link to="/game">賽程</Link>
+                <Link to="/schedule">賽程</Link>
               </span>
             </div>
           </li>
@@ -450,21 +648,34 @@ const NavComponent = () => {
           </li>
           <li className=" flex  navHover space-x-4">
             <a className="masked-linedin hover:text-league-secondary duration-200"></a>
-            <a>
-              <img src={facebook} />
-            </a>
-            <a>
-              <img src={instagram} />
-            </a>
-            <a>
-              <img src={youtube} />
-            </a>
+            <a className="masked-facebook hover:text-league-secondary duration-200"></a>
+            <a className="masked-instagram hover:text-league-secondary duration-200"></a>
+            <a className="masked-youtube hover:text-league-secondary duration-200"></a>
           </li>
         </ul>
-
-        <div className=" relative left-6  w-[24px]   ">
+        <div className=" absolute -right-6 top-0  w-[24px]   ">
           <div className="h-[60px] bg-black "></div>
           <div className="triangle"></div>
+        </div>
+        <div
+          className="bg-white md:hidden mr-[2rem] cursor-pointer rounded-full"
+          onClick={(e) => opendropdown(e)}
+        >
+          <div className="w-[36px] h-[36px] relative">
+            <img src={circle}></img>
+            <img
+              src={button}
+              className={`absolute top-[10px] left-[9.5px] w-[16px] ${
+                isOpen ? "hidden" : ""
+              } `}
+            ></img>
+            <img
+              src={x}
+              className={`absolute top-[12px] left-[12px] w-[12px] ${
+                isOpen ? "" : "hidden"
+              } `}
+            ></img>
+          </div>
         </div>
       </nav>
     </header>

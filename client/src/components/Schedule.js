@@ -294,7 +294,7 @@ const Schedule = () => {
             <div className="px-8 py-8 max-sm:px-0 max-sm:py-0">
               {/* GameNumber */}
               <div className="flex  relative mb-5  max-sm:flex-wrap-reverse">
-                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-5 max-sm:top-[2.5rem] max-sm:text-label-sm">
+                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-5 max-sm:top-[3.5rem] max-sm:text-label-sm">
                   <div className="px-4 ">
                     <span>GAME</span>
                     <span className="pl-1 ">{game.gameNumber}</span>
@@ -339,8 +339,8 @@ const Schedule = () => {
                     {game.time}
                   </div>
                 </div>
-                <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100 max-sm:flex-[0_0_100%] max-sm:border-x-0">
-                  <div className=" flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap max-sm:flex-col-reverse">
+                <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100  max-sm:border-x-0">
+                  <div className=" flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap max-sm:flex-col-reverse max-lg:flex-[0_0_20%]">
                     <div className="relative text-center py-5 px-1">
                       <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
                         {game.awayteam}
@@ -351,25 +351,25 @@ const Schedule = () => {
                       <img
                         src={getTeamLogo(game.awayteam)}
                         width="96"
-                        className="mb-2"
+                        className="my-2 max-sm:w-[48px]"
                       />
                       <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 max-sm:text-label-sm mx-auto">
                         AWAY
                       </label>
                     </div>
                   </div>
-                  <div className="flex-[0_0_40%] text-center flex flex-col font-bold justify-center">
+                  <div className="flex-[0_0_40%] text-center flex flex-col font-bold justify-center max-lg:flex-[0_0_60%]">
                     <span className="text-en-heading-3 mb-2">{game.time}</span>
                     <span className="text-cn-paragraph-md font-medium">
                       {game.location}
                     </span>
                   </div>
-                  <div className="flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap ">
-                    <div className="text-center  justify-center max-sm:flex max-sm:flex-col-reverse">
+                  <div className="flex flex-[0_0_30%] justify-center items-center max-sm:flex-wrap max-lg:flex-[0_0_20%]">
+                    <div className="text-center  justify-center max-sm:flex max-sm:flex-col-reverse ">
                       <img
                         src={getTeamLogo(game.hometeam)}
                         width="96"
-                        className="mb-2 "
+                        className="my-2 max-sm:w-[48px]"
                       />
                       <label className="bg-league-primary text-white rounded-full text-label-sm py-1 px-2 mx-auto">
                         HOME
