@@ -423,7 +423,7 @@ const NavComponent = () => {
                     : "translate-y-0"
                 }`}
               >
-                <Link to="/schedule">賽程</Link>
+                <Link to="/game">賽程</Link>
               </span>
             </div>
           </li>
