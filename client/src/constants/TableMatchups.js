@@ -73,8 +73,8 @@ const TableMatchups = ({ teams }) => {
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 3-2
               </td>
-              <td className=" py-2 text-center">
-                <img className="flex px-2" src={TPBL}></img>
+              <td className=" px-2 text-center">
+                <img className="flex " src={TPBL}></img>
               </td>
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 2-2
@@ -155,8 +155,8 @@ const TableMatchups = ({ teams }) => {
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 1-4
               </td>
-              <td className=" py-2 text-center max-sm:text-en-paragraph-sm">
-                <img className="flex px-2" src={TPBL}></img>
+              <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
+                <img className="flex " src={TPBL}></img>
               </td>
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 4-1
@@ -196,8 +196,8 @@ const TableMatchups = ({ teams }) => {
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 1-4
               </td>
-              <td className=" py-2 text-center max-sm:text-en-paragraph-sm">
-                <img className="flex px-2" src={TPBL}></img>
+              <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
+                <img className="flex" src={TPBL}></img>
               </td>
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 3-1
@@ -237,8 +237,8 @@ const TableMatchups = ({ teams }) => {
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 1-3
               </td>
-              <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
-                <img className="flex px-2" src={TPBL}></img>
+              <td className="px-3 text-center max-sm:text-en-paragraph-sm">
+                <img className="flex " src={TPBL}></img>
               </td>
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 3-2

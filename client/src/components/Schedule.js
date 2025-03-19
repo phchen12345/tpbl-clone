@@ -130,7 +130,7 @@ const Schedule = () => {
           </div>
         </div>
       </section>
-      <section className="bg2 mb-12">
+      <section className="bg2 ">
         <div className="flex flex-wrap col-span-12 items-center justify-between">
           <div className=" flex max-sm:mx-auto  cursor-pointer ">
             <div
@@ -284,133 +284,157 @@ const Schedule = () => {
             </div>
           </div>
         </div>
+        <div className="bg-linear relative w-[50vh] max-sm:w-[46vh]">
+          <div className="triangle2 absolute right-0"></div>
+          <div className="table-bg  flex px-8 py-4 gap-3 max-sm:px-4 max-sm:pb-2 max-sm:pt-[10px]">
+            <h2 className="text-en-heading-3 max-sm:text-en-heading-5">
+              Regular Season
+            </h2>
+            <h6 className="text-cn-paragraph-xl pt-[10px] max-sm:text-cn-paragraph-md">
+              例行賽
+            </h6>
+          </div>
+        </div>
       </section>
       <section className="bg2">
-        {games.map((game, index) => (
-          <div
-            key={index}
-            className=" bg-white col-span-12 my-8 border-b border-league-secondary-100 max-sm:my-0"
-          >
-            <div className="px-8 py-8 max-sm:px-0 max-sm:py-0">
-              {/* GameNumber */}
-              <div className="flex  relative mb-5  max-sm:flex-wrap-reverse">
-                <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-5 max-sm:top-[3.5rem] max-sm:text-label-sm">
-                  <div className="px-4 ">
-                    <span>GAME</span>
-                    <span className="pl-1 ">{game.gameNumber}</span>
+        {games.map((game, index) => {
+          const isNewDay =
+            index === 0 ||
+            new Date(games[index - 1].gameDate).toDateString() !==
+              new Date(game.gameDate).toDateString();
+          return (
+            <div
+              key={index}
+              className={` bg-white col-span-12  border-b border-league-secondary-100  ${
+                isNewDay && index !== 0 ? "mt-6" : "mt-0"
+              }`}
+            >
+              <div className="px-8 py-8 max-sm:px-0 max-sm:py-0">
+                {/* GameNumber */}
+                <div className="flex  relative mb-5  max-sm:flex-wrap-reverse">
+                  <div className="bg-black text-white rounded-full font-semibold max-sm:absolute max-sm:right-5 max-sm:top-[3.5rem] max-sm:text-label-sm">
+                    <div className="px-4 ">
+                      <span>GAME</span>
+                      <span className="pl-1 ">{game.gameNumber}</span>
+                    </div>
+                  </div>
+                  <div className=" flex justify-center gap-4 items-center absolute right-0 max-sm:relative max-sm:broadcate max-sm:w-full max-sm:py-2">
+                    <span className="text-league-secondary-500 max-sm:text-label-sm">
+                      TV
+                    </span>
+                    <span>
+                      <img
+                        className="h-[15px] max-sm:h-[10px]"
+                        src="data:image/webp;base64,UklGRvYCAABXRUJQVlA4WAoAAAAQAAAAcwAAEwAAQUxQSHMCAAABkFZtexY5TxxkHQQHqYOMgmUUQBUMVdA42CpYULCsgsHB4IDXwcYB7znkSeh3+zMiHLhtG0mee7oulGO6f8C/devjyeYB2FsB0QLhDKsDYPsahKszZWAHIBzc/sckerYFtIkAZFEdsJxiDXA10juiVra9a0Q/gKdVVTf7Q/J6qt5yLGtQ1RHpVCNWrWgzS40hZIgZZsoQDj+kgcLKvhQCnVpCn2xmHhiFfLewZhKnh2II86EZIVyEODzQ5B9QIHuLH9OSSak0C7ISJiWUXg/5OpAlEuKxwEqRUYS6Uzo/H/JNIuqKTFGOuZmXvGVR65B1wLdD7xBioJnkBKglkpmih9McGUeoDwA092Yy7htqupZNRinUHTjJHHVI51RTC7h4BPheB8JEVs4fpX8DYOZDLyQ5sOJ3zOCcu6g+jOjaHxvAmSOr1Go2Rwf6LDpOKbWOY6vnglDgr0WEe0BR3Hx8nM/QiG7H0D44VxnpyDpWayaAF1V1EwHVrdTlAKQY+aSHbDGiWtDAtr23DtZRBXZv+HnzwHfUbKT+6XhtkDoQVXHFQgWBLzv2i6reeYQVOaXrEqeHme9AzCxmFVlU92ecZI69nkhuvAZUgZ4xk1UpegxFx5ocwFD9MN447g0w6eW6d7hS7Ykm6e5QzxxZk+tzLF+VFDLEQkBiIZUVIomkIkSTqiOVRcjIK3DVRXZHP2JduRKiutpsFUfWHkE1jUV1akCphycSm6oLbnH6KD7G2gyNjn2YtuPZCOW0SbKUTU5/H+jjzQJtvDkAPhZbOAPyRALHWAzMHB0pMCtvcRybuTNLexHpK339aPFnbTaE4PC/uwEAVlA4IFwAAAAQBQCdASp0ABQAPp1InUqiIiIjKBQLULATiWcAy9huAJoSAjXqGbzYDtqidap0JlWMAP70TTcZSmtKFJzrwduVtDgDOgs38w+p/6XJguLlw4uSgBTBenMgYAAAAA=="
+                      />
+                    </span>
+                    <span className="text-league-secondary-500 max-sm:text-label-sm">
+                      MOD
+                    </span>
+                    <span>
+                      <img
+                        className="h-[15px] max-sm:h-[10px]"
+                        src={sportcast}
+                      />
+                    </span>
+                    <span className="text-league-secondary-500 max-sm:text-label-sm">
+                      OTT
+                    </span>
+                    <span>
+                      <img src={youtube} className="h-[15px] max-sm:h-[10px]" />
+                    </span>
                   </div>
                 </div>
-                <div className=" flex justify-center gap-4 items-center absolute right-0 max-sm:relative max-sm:broadcate max-sm:w-full max-sm:py-2">
-                  <span className="text-league-secondary-500 max-sm:text-label-sm">
-                    TV
-                  </span>
-                  <span>
-                    <img
-                      className="h-[15px] max-sm:h-[10px]"
-                      src="data:image/webp;base64,UklGRvYCAABXRUJQVlA4WAoAAAAQAAAAcwAAEwAAQUxQSHMCAAABkFZtexY5TxxkHQQHqYOMgmUUQBUMVdA42CpYULCsgsHB4IDXwcYB7znkSeh3+zMiHLhtG0mee7oulGO6f8C/devjyeYB2FsB0QLhDKsDYPsahKszZWAHIBzc/sckerYFtIkAZFEdsJxiDXA10juiVra9a0Q/gKdVVTf7Q/J6qt5yLGtQ1RHpVCNWrWgzS40hZIgZZsoQDj+kgcLKvhQCnVpCn2xmHhiFfLewZhKnh2II86EZIVyEODzQ5B9QIHuLH9OSSak0C7ISJiWUXg/5OpAlEuKxwEqRUYS6Uzo/H/JNIuqKTFGOuZmXvGVR65B1wLdD7xBioJnkBKglkpmih9McGUeoDwA092Yy7htqupZNRinUHTjJHHVI51RTC7h4BPheB8JEVs4fpX8DYOZDLyQ5sOJ3zOCcu6g+jOjaHxvAmSOr1Go2Rwf6LDpOKbWOY6vnglDgr0WEe0BR3Hx8nM/QiG7H0D44VxnpyDpWayaAF1V1EwHVrdTlAKQY+aSHbDGiWtDAtr23DtZRBXZv+HnzwHfUbKT+6XhtkDoQVXHFQgWBLzv2i6reeYQVOaXrEqeHme9AzCxmFVlU92ecZI69nkhuvAZUgZ4xk1UpegxFx5ocwFD9MN447g0w6eW6d7hS7Ykm6e5QzxxZk+tzLF+VFDLEQkBiIZUVIomkIkSTqiOVRcjIK3DVRXZHP2JduRKiutpsFUfWHkE1jUV1akCphycSm6oLbnH6KD7G2gyNjn2YtuPZCOW0SbKUTU5/H+jjzQJtvDkAPhZbOAPyRALHWAzMHB0pMCtvcRybuTNLexHpK339aPFnbTaE4PC/uwEAVlA4IFwAAAAQBQCdASp0ABQAPp1InUqiIiIjKBQLULATiWcAy9huAJoSAjXqGbzYDtqidap0JlWMAP70TTcZSmtKFJzrwduVtDgDOgs38w+p/6XJguLlw4uSgBTBenMgYAAAAA=="
-                    />
-                  </span>
-                  <span className="text-league-secondary-500 max-sm:text-label-sm">
-                    MOD
-                  </span>
-                  <span>
-                    <img className="h-[15px] max-sm:h-[10px]" src={sportcast} />
-                  </span>
-                  <span className="text-league-secondary-500 max-sm:text-label-sm">
-                    OTT
-                  </span>
-                  <span>
-                    <img src={youtube} className="h-[15px] max-sm:h-[10px]" />
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center max-sm:block max-sm:px-4 ">
-                <div className="flex-[0_0_15%] max-sm:flex max-sm:mb-[1rem]">
-                  <span className="text-en-heading-4 max-sm:text-en-heading-6">
-                    {new Date(game.gameDate).toLocaleDateString("zh-TW", {
-                      month: "2-digit",
-                      day: "2-digit",
-                    })}
-                  </span>
-                  <span className="text-en-paragraph-sm px-2 max-sm:pt-1.5">
-                    ({game.day})
-                  </span>
-                  <div className="flex text-en-heading-5 text-league-primary-600 max-sm:text-en-heading-6">
-                    {game.time}
+                <div className="flex items-center max-sm:block max-sm:px-4 ">
+                  <div className="flex-[0_0_15%] max-sm:flex max-sm:mb-[1rem]">
+                    <span className="text-en-heading-4 max-sm:text-en-heading-6">
+                      {new Date(game.gameDate).toLocaleDateString("zh-TW", {
+                        month: "2-digit",
+                        day: "2-digit",
+                      })}
+                    </span>
+                    <span className="text-en-paragraph-sm px-2 max-sm:pt-1.5">
+                      ({game.day})
+                    </span>
+                    <div className="flex text-en-heading-5 text-league-primary-600 max-sm:text-en-heading-6">
+                      {game.time}
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100  max-sm:border-x-0">
-                  <div className=" flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap max-sm:flex-col-reverse max-lg:flex-[0_0_20%]">
-                    <div className="relative text-center py-5 px-1">
-                      <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
-                        {game.awayteam}
+                  <div className="flex flex-[0_0_70%] border-x px-1 border-league-secondary-100  max-sm:border-x-0">
+                    <div className=" flex flex-[0_0_30%] justify-end items-center max-sm:flex-wrap max-sm:flex-col-reverse max-lg:flex-[0_0_20%]">
+                      <div className="relative text-center py-5 px-1">
+                        <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
+                          {game.awayteam}
+                        </div>
+                        <div className="">{getTeamWinLose(game.awayteam)}</div>
                       </div>
-                      <div className="">{getTeamWinLose(game.awayteam)}</div>
-                    </div>
-                    <div className="text-center max-sm:flex max-sm:flex-col-reverse">
-                      <img
-                        src={getTeamLogo(game.awayteam)}
-                        width="96"
-                        className="my-2 max-sm:w-[48px]"
-                      />
-                      <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 max-sm:text-label-sm mx-auto">
-                        AWAY
-                      </label>
-                    </div>
-                  </div>
-                  <div className="flex-[0_0_40%] text-center flex flex-col font-bold justify-center max-lg:flex-[0_0_60%]">
-                    <span className="text-en-heading-3 mb-2">{game.time}</span>
-                    <span className="text-cn-paragraph-md font-medium">
-                      {game.location}
-                    </span>
-                  </div>
-                  <div className="flex flex-[0_0_30%] justify-center items-center max-sm:flex-wrap max-lg:flex-[0_0_20%]">
-                    <div className="text-center  justify-center max-sm:flex max-sm:flex-col-reverse ">
-                      <img
-                        src={getTeamLogo(game.hometeam)}
-                        width="96"
-                        className="my-2 max-sm:w-[48px]"
-                      />
-                      <label className="bg-league-primary text-white rounded-full text-label-sm py-1 px-2 mx-auto">
-                        HOME
-                      </label>
-                    </div>
-                    <div className="relative text-center py-5 px-1">
-                      <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
-                        {game.hometeam}
+                      <div className="text-center max-sm:flex max-sm:flex-col-reverse">
+                        <img
+                          src={getTeamLogo(game.awayteam)}
+                          width="96"
+                          className="my-2 max-sm:w-[48px]"
+                        />
+                        <label className="bg-slate-200  rounded-full text-label-sm  py-1 px-2 max-sm:text-label-sm mx-auto">
+                          AWAY
+                        </label>
                       </div>
-                      <div className="">{getTeamWinLose(game.hometeam)}</div>
+                    </div>
+                    <div className="flex-[0_0_40%] text-center flex flex-col font-bold justify-center max-lg:flex-[0_0_60%]">
+                      <span className="text-en-heading-3 mb-2">
+                        {game.time}
+                      </span>
+                      <span className="text-cn-paragraph-md font-medium">
+                        {game.location}
+                      </span>
+                    </div>
+                    <div className="flex flex-[0_0_30%] justify-center items-center max-sm:flex-wrap max-lg:flex-[0_0_20%]">
+                      <div className="text-center  justify-center max-sm:flex max-sm:flex-col-reverse ">
+                        <img
+                          src={getTeamLogo(game.hometeam)}
+                          width="96"
+                          className="my-2 max-sm:w-[48px]"
+                        />
+                        <label className="bg-league-primary text-white rounded-full text-label-sm py-1 px-2 mx-auto">
+                          HOME
+                        </label>
+                      </div>
+                      <div className="relative text-center py-5 px-1">
+                        <div className="text-cn-paragraph-xl font-bold max-sm:text-cn-paragraph-sm">
+                          {game.hometeam}
+                        </div>
+                        <div className="">{getTeamWinLose(game.hometeam)}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex-[0_0_15%] flex flex-col text-center max-sm:flex-row max-sm:justify-around">
-                  <a
-                    href={getTeamTicket(game.hometeam)}
-                    target="_blank"
-                    className="px-6 py-2 "
-                  >
-                    <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
-                      <img
-                        src={ticket}
-                        className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
-                      />
-                      <span>購票連結</span>
-                    </span>
-                  </a>
-                  <a href="#" className="px-6 py-2 ">
-                    <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
-                      <img
-                        src={statistics}
-                        className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
-                      />
-                      <span>數據統計</span>
-                    </span>
-                  </a>
+                  <div className="flex-[0_0_15%] flex flex-col text-center max-sm:flex-row max-sm:justify-around">
+                    <a
+                      href={getTeamTicket(game.hometeam)}
+                      target="_blank"
+                      className="px-6 py-2 "
+                    >
+                      <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
+                        <img
+                          src={ticket}
+                          className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
+                        />
+                        <span>購票連結</span>
+                      </span>
+                    </a>
+                    <a href="#" className="px-6 py-2 ">
+                      <span className="hover:underline underline-offset-4  flex justify-center gap-2 max-sm:block">
+                        <img
+                          src={statistics}
+                          className="h-[20px] max-sm:mx-auto max-sm:mb-[0.5rem]"
+                        />
+                        <span>數據統計</span>
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
     </div>
   );
