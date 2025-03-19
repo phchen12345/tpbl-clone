@@ -123,7 +123,10 @@ const NavComponent = () => {
             </ul>
           </li>
           <li>
-            <a href="http://localhost:3000/schedule" className="flex px-4 py-6">
+            <a
+              href="https://tpbl-clone.onrender.com/game"
+              className="flex px-4 py-6"
+            >
               賽程
             </a>
           </li>
@@ -411,7 +414,7 @@ const NavComponent = () => {
                   dropdownOpen === "test2" ? "-translate-y-6" : "translate-y-0 "
                 }`}
               >
-                <Link to="/schedule">賽程</Link>
+                <Link to="/game">賽程</Link>
               </span>
               <span
                 className={`block transition-transform duration-300   ${

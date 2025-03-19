@@ -237,7 +237,7 @@ const TableMatchups = ({ teams }) => {
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 1-3
               </td>
-              <td className=" py-2 text-center max-sm:text-en-paragraph-sm">
+              <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
                 <img className="flex px-2" src={TPBL}></img>
               </td>
               <td className=" px-2 text-center max-sm:text-en-paragraph-sm">
